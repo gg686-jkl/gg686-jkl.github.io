@@ -1,5 +1,5 @@
 ---
-title: fuck you 
+title: FTW
 published: true
 ---
 
