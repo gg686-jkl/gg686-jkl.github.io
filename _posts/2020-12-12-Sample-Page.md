@@ -1,5 +1,5 @@
 ---
-title: FTW
+title: Temple
 published: true
 ---
 
