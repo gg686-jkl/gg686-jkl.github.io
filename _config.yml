@@ -1,7 +1,7 @@
 title: Hayker-Blog
 description: "A Jekyll Blog Theme For Hackers"
 author:
-  name: "Heyker"
+  name: "Hayker"
   email: "@whatever"
   url: "https://gg686-jkl.github.io/"
 
@@ -29,4 +29,4 @@ plugins:
 
 # Custom variables
 owner : "Hayker"
-year : "2025"
+year : "2026"
