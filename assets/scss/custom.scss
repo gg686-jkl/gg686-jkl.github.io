@@ -1,6 +1,17 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
 .site-footer {
     text-align: center;
-    font-size: 0.75rem; /* 更小的字体 */
-    margin-top: 4rem; /* 确保和内容拉开距离 */
+    font-size: 0.65rem; /* 更小的字体 */
+    margin-top: auto; /* Push to bottom */
     width: 100%;
+    padding-bottom: 2rem;
 }
+
