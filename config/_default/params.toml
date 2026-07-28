@@ -68,3 +68,7 @@ SortBy              = "default"
         strict           = 0
         loading          = "lazy"
 
+
+[analytics.supabase]
+    url = "https://[YOUR_PROJECT_REF].supabase.co"
+    anon_key = "sb_publishable_siS1Bp7pcpWmFumsJVKgTg_AOAZEjWd"

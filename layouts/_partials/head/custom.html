@@ -1,1 +1,4 @@
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+{{ if .Site.Params.analytics.supabase }}
+{{ $analytics := resources.Get "js/analytics.js" | resources.ExecuteAsTemplate "js/analytics.js" . | resources.Minify | resources.Fingerprint }}
+<script src="{{ $analytics.RelPermalink }}" defer></script>
+{{ end }}

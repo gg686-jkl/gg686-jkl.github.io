@@ -52,11 +52,12 @@
                     </time>
                 {{ end }}
                 
+                {{ partial "helper/icon" "user" }}
+                <time class="article-time--reading">
+                    阅读量: <span class="supabase_pv_value" data-slug="{{ $Page.RelPermalink }}"></span>
+                </time>
                 {{ if not $IsList }}
-                    {{ partial "helper/icon" "user" }}
-                    <time class="article-time--reading" id="busuanzi_container_page_pv">
-                        阅读量: <span id="busuanzi_value_page_pv"></span>
-                    </time>
+                <script>window.ARTICLE_SLUG = '{{ $Page.RelPermalink }}';</script>
                 {{ end }}
             </div>
         {{ end }}
