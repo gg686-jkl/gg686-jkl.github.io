@@ -55,10 +55,10 @@ SortBy              = "default"
 
     [comments.giscus]
         repo             = "gg686-jkl/gg686-jkl.github.io"
-        repoID           = "" # FILL THIS IN LATER
+        repoID           = "R_kgDOQur6bA"
         category         = "Announcements"
-        categoryID       = "" # FILL THIS IN LATER
-        mapping          = "title"
+        categoryID       = "DIC_kwDOQur6bM4DCKkz"
+        mapping          = "pathname"
         lightTheme       = "light"
         darkTheme        = "dark_dimmed"
         reactionsEnabled = 1
