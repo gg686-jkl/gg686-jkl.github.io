@@ -70,5 +70,5 @@ SortBy              = "default"
 
 
 [analytics.supabase]
-    url = "https://[YOUR_PROJECT_REF].supabase.co"
+    url = "https://dmkenmiizaevsrkoomzz.supabase.co"
     anon_key = "sb_publishable_siS1Bp7pcpWmFumsJVKgTg_AOAZEjWd"
