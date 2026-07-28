@@ -3,7 +3,7 @@ title: "Links"
 layout: "links"
 menu:
     main:
-        weight: -80
+        weight: 50
         params:
             icon: link
 ---

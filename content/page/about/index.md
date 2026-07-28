@@ -3,7 +3,9 @@ layout: page
 title: About
 menu:
   main:
-    weight: 10
+    weight: 40
+    params:
+      icon: user
 ---
 
 Something about me.

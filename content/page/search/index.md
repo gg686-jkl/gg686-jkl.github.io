@@ -3,7 +3,7 @@ title: "Search"
 layout: "search"
 menu:
     main:
-        weight: -90
+        weight: 20
         params:
             icon: search
 ---
