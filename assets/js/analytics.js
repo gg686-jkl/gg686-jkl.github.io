@@ -86,23 +86,39 @@ async function renderStats() {
             
             // Top 3
             const top3 = countries.slice(0, 3);
-            let html = `<div style="font-size: 0.85rem; padding: 10px 20px;">
-                <div style="margin-bottom: 5px; font-weight: bold; color: var(--body-text-color);">总访客数: ${totalUV}</div>
-                <div style="color: var(--body-text-color);">访客分布 (Top 3):</div>`;
+            let html = `
+            <div class="supabase-stats-card">
+                <div class="stats-header">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    </svg>
+                    <span>总访客: ${totalUV}</span>
+                </div>
+                <div style="font-size: 0.75rem; margin-bottom: 8px; color: var(--accent-color);">访客分布 (Top 3)</div>`;
             
             top3.forEach(c => {
-                html += `<div style="margin-left: 10px; opacity: 0.8;">- ${c.country_name}: ${c.visitors}</div>`;
+                html += `
+                <div class="stats-item">
+                    <span>${c.country_name}</span>
+                    <span>${c.visitors}</span>
+                </div>`;
             });
 
             // Dropdown for the rest
             if (countries.length > 3) {
                 html += `
-                <details style="margin-top: 5px;">
-                    <summary style="cursor: pointer; opacity: 0.7; font-size: 0.8rem;">展开全部国家</summary>
-                    <div style="margin-top: 5px; max-height: 150px; overflow-y: auto;">
+                <details>
+                    <summary>展开全部地区</summary>
+                    <div class="details-content">
                 `;
                 countries.slice(3).forEach(c => {
-                    html += `<div style="margin-left: 10px; opacity: 0.8;">- ${c.country_name}: ${c.visitors}</div>`;
+                    html += `
+                    <div class="stats-item">
+                        <span>${c.country_name}</span>
+                        <span>${c.visitors}</span>
+                    </div>`;
                 });
                 html += `</div></details>`;
             }
@@ -122,7 +138,23 @@ async function renderStats() {
         
         pvElements.forEach(el => {
             const slug = el.getAttribute('data-slug');
-            el.innerText = pvMap[slug] || 0;
+            const views = pvMap[slug] || 0;
+            // Inject new HTML
+            const parent = el.parentElement;
+            if (parent && !parent.classList.contains('article-stats-container')) {
+                const wrapper = document.createElement('span');
+                wrapper.className = 'article-stats-container';
+                wrapper.innerHTML = `
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                    </svg>
+                    阅读量: ${views}
+                `;
+                parent.replaceChild(wrapper, el);
+            } else {
+                el.innerText = views;
+            }
         });
     }
 }
