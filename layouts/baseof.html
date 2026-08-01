@@ -11,7 +11,9 @@
             {{- block "left-sidebar" . -}}
                 {{ partial "sidebar/left.html" . }}
             {{- end -}}
-            {{- block "right-sidebar" . -}}{{ end }}
+            {{- block "right-sidebar" . -}}
+                {{ partial "sidebar/right.html" (dict "Context" . "Scope" "page") }}
+            {{- end -}}
             <main class="main full-width">
                 {{- block "main" . }}{{- end }}
             </main>
