@@ -1,4 +1,0 @@
-{{ if .Site.Params.analytics.supabase }}
-{{ $analytics := resources.Get "js/analytics.js" | resources.ExecuteAsTemplate "js/analytics.js" . | resources.Minify | resources.Fingerprint }}
-<script src="{{ $analytics.RelPermalink }}" defer></script>
-{{ end }}
