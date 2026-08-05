@@ -2,6 +2,7 @@ baseURL = 'https://gg686-jkl.github.io/'
 locale = 'zh-cn'
 title = "Blog"
 theme = 'PaperMod'
+hasCJKLanguage = true
 
 enableInlineShortcodes = true
 enableRobotsTXT = true
